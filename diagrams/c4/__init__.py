@@ -43,8 +43,8 @@ def C4Node(name, technology="", description="", type="Container", **kwargs):
         "label": _format_node_label(name, key, description),
         "labelloc": "c",
         "shape": "rect",
-        "width": "2.6",
-        "height": "1.6",
+        "width": "2.8",
+        "height": "1.8",
         "fixedsize": "true",
         "style": "filled",
         "fillcolor": "dodgerblue3",
@@ -76,6 +76,12 @@ def Person(name, description="", external=False, **kwargs):
     fillcolor = "gray60" if external else "dodgerblue4"
     style = "rounded,filled"
     return C4Node(name, description=description, type=type, fillcolor=fillcolor, style=style)
+
+
+def Component(name, description="", external=False, **kwargs):
+    type = "External Component" if external else "Component"
+    fillcolor = "#85BBF0" if external else "#85BBF0"
+    return C4Node(name, description=description, type=type, fillcolor=fillcolor)
 
 
 def SystemBoundary(name, **kwargs):
